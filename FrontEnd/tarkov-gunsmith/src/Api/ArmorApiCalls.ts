@@ -67,7 +67,7 @@ async function fetchArmorMaterialsFromApi_TarkovDev(): Promise<
   try {
     const response: AxiosResponse<ApiResponseArmorMaterialStats> =
       await axios.post(
-        "https://api.tarkov.dev/graphql",
+        "http://localhost:4000/graphql",
         {
           query: `
         query materials {

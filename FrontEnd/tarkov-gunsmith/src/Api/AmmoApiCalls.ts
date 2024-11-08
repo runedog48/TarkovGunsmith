@@ -4,7 +4,7 @@ import { AmmoTableRow, ApiResponse, DevTarkovAmmoItem } from "../Types/AmmoTypes
 
 export async function fetchDataFromApi_TarkovDev(): Promise<DevTarkovAmmoItem[] | null> {
     try {
-        const response: AxiosResponse<ApiResponse> = await axios.post("https://api.tarkov.dev/graphql", {
+        const response: AxiosResponse<ApiResponse> = await axios.post("http://localhost:4000/graphql", {
             query: `
             {
                 items(types: [ammo]) {

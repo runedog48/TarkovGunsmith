@@ -2,6 +2,8 @@
   "name": "tarkov-gunsmith",
   "version": "0.1.0",
   "type": "module",
+  "main": "public/electron.js",
+  "homepage": "./",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -24,11 +26,11 @@
     "bootstrap": "^5.2.3",
     "copy-image-clipboard": "^2.1.2",
     "dayjs": "^1.11.9",
+    "electron-is-dev": "^3.0.1",
     "env-cmd": "^10.1.0",
     "html2canvas": "^1.4.1",
     "mantine-react-table": "^1.3.4",
     "material-react-table": "^1.11.0",
-    "node-sass": "^7.0.3",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0",
     "react-dom": "^18.2.0",
@@ -48,7 +50,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!@toolz/allow-react)/\" --env=jsdom",
     "build:development": "env-cmd -f .env.development npm run build",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dist": "electron-builder --win --linux",
+    "electron-dev": "react-scripts start & electron ."
   },
   "eslintConfig": {
     "extends": [
@@ -71,7 +75,10 @@
   "devDependencies": {
     "@babel/preset-typescript": "^7.21.0",
     "@types/react-router-bootstrap": "^0.24.5",
-    "babel-jest": "^26.6.3"
+    "babel-jest": "^26.6.3",
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8",
+    "node-sass": "^7.0.3"
   },
   "jest": {
     "moduleNameMapper": {
@@ -81,5 +88,18 @@
   "engines": {
     "npm": ">=8.0.0 <9.0.0",
     "node": ">=16.0.0 <17.0.0"
+  },
+  "build": {
+    "appId": "com.Xeres17.TarkovGunsmith",
+    "win": {
+      "target": "dir"
+    },
+    "linux": {
+      "target": "dir"
+    },
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ]
   }
 }

@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 import { Helmet } from "react-helmet-async"
 import {
-  BrowserRouter, Route, Routes
+  HashRouter, Route, Routes
 } from "react-router-dom";
 // import {Header} from './Components/Header';
 import Home from './Components/Home';
@@ -55,7 +55,7 @@ function App() {
             },
           }
           }>
-          <BrowserRouter>
+          <HashRouter>
             <TgAppShell>
               {/* <Header /> */}
               <Routes>
@@ -94,7 +94,7 @@ function App() {
 
             </TgAppShell>
 
-          </BrowserRouter>
+          </HashRouter>
         </MantineProvider>
       </HelmetProvider>
     </>
